@@ -1,6 +1,7 @@
 export class User {
   uid: string;
-  created: Date;
+  id: string;
+  createdAt: Date;
   lastLogin: Date;
   email: string;
   displayName: string;

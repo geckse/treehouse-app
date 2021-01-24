@@ -5,8 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-export const components = [
+import { RoomTileComponent } from './room-tile/room-tile.component';
 
+export const components = [
+  RoomTileComponent
 ];
 
 export const pipes = [

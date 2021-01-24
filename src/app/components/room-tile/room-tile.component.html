@@ -1,0 +1,28 @@
+<ion-card *ngIf="room">
+
+<ion-card-header>
+  <ion-card-title>
+    {{room.title}}
+  </ion-card-title>
+</ion-card-header>
+ <ion-card-content>
+    <div class="left-area">
+      <ion-avatar>
+        <img src="https://thispersondoesnotexist.com/image" />
+      </ion-avatar>
+      <ion-avatar>
+        <img src="https://thispersondoesnotexist.com/image?p2=1" />
+      </ion-avatar>
+    </div>
+    <div class="speaker-area">
+      <ul>
+        <!-- <li *ngFor="let speaker.get() of room.speakers | async">{{speaker.displayName}}</li> -->
+      </ul>
+      <div class="room-meta">
+        <span class="user-count">277</span> <ion-icon name="person"></ion-icon>
+        <span class="speaker-count">3</span> <ion-icon name="chatbubble-ellipses"></ion-icon>
+      </div>
+    </div>
+  </ion-card-content>
+
+</ion-card>

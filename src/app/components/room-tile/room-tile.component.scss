@@ -1,0 +1,52 @@
+:host {
+
+  ion-card {
+    border-radius: 20px;
+  }
+
+  ion-card-header {
+    ion-card-title {
+      font-size: 500;
+      font-size: 1.1rem;
+    }
+  }
+
+  ion-card-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .left-area {
+    position: relative;
+    min-width: 80px;
+    margin-right: 20px;
+    ion-avatar {
+      position: absolute;
+      z-index: 2;
+      + ion-avatar {
+        z-index: 1;
+        right: 0px;
+        top: 19px;
+      }
+    }
+  }
+  .speaker-area {
+    ul {
+      list-style-type: none;
+      padding-left: 0px;
+      li {
+        font-weight: 500;
+      }
+    }
+  }
+  .room-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span {
+      margin-right: 4px;
+    }
+    ion-icon {
+      margin-right: 10px;
+    }
+  }
+}

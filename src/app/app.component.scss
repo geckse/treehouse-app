@@ -1,0 +1,15 @@
+:host {
+  ::ng-deep {
+      ion-content {
+        --background: var(--ion-background-color);
+      }
+      ion-header {
+        --background: var(--ion-background-color-accent);
+        background: var(--background);
+        ion-toolbar {
+          --background: var(--ion-background-color-accent);
+          background: var(--background);
+        }
+      }
+  }
+}
