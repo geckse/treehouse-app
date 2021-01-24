@@ -19,16 +19,16 @@ export class RoomService {
 
   constructor(private afs: AngularFirestore, private auth: AuthService, private userService: UserService) {
     this.roomsCollection = this.afs.collection<Room>('rooms');
-      this.rooms = this.roomsCollection.snapshotChanges().pipe(
+    this.rooms = this.roomsCollection.snapshotChanges().pipe(
           map(actions => {
             return actions.map(a => {
               const data = a.payload.doc.data();
               const id = a.payload.doc.id;
 
-              let creator= null;
-              if(data.creator) creator = this.userService.getUser(data.creator.id);
+              let creator =  null;
+              //if(data.creator) creator = this.userService.getUser(data.creator.id);
 
-              return { id, ...data, creator };
+              return { id, ...data };
             });
           })
     );
