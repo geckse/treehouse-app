@@ -11,5 +11,13 @@
           background: var(--background);
         }
       }
+
+      .floating-footer {
+        width: 100%;
+        padding-bottom: 10px;
+        position: fixed;
+        bottom: calc(var(--ion-default-footerbar-height) + var(--ion-safe-area-bottom));
+      }
+
   }
 }
