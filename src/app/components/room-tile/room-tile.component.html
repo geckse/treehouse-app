@@ -15,8 +15,8 @@
       </ion-avatar>
     </div>
     <div class="speaker-area">
-      {{creator$ | async | json}}
-      {{speakers$ | async | json}}
+      <pre>{{creator$ | async | json}}</pre>
+      <pre>{{speakers$ | async | json}}</pre>
       <ul>
         <!-- <li *ngFor="let speaker.get() of room.speakers | async">{{speaker.displayName}}</li> -->
       </ul>
