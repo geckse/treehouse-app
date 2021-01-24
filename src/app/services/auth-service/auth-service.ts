@@ -17,6 +17,7 @@ export class AuthService {
 
   fireUser: any;
   currentUser: User;
+  public currentUserRef: DocumentReference;
 
   constructor(
       private http: HttpClient,
@@ -137,6 +138,7 @@ export class AuthService {
           if (user) {
               this.fireUser = user;
               const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+              this.currentUserRef = userRef;
               userRef.ref.get().then((doc)=>{
                 // @ts-ignore
                 this.currentUser = doc.data();

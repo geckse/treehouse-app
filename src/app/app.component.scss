@@ -19,5 +19,12 @@
         bottom: calc(var(--ion-default-footerbar-height) + var(--ion-safe-area-bottom));
       }
 
+      /*
+        modals
+      */
+      .create-room-modal {
+        --max-height: 40vh;
+      }
+
   }
 }

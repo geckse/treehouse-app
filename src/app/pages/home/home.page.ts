@@ -31,7 +31,7 @@ export class HomePage implements OnInit {
   async openCreatePage() {
    const modal = await this.modalController.create({
      component: CreateRoomPage,
-     cssClass: 'my-custom-class',
+     cssClass: 'create-room-modal',
      swipeToClose: true,
      presentingElement: this.routerOutlet.nativeEl
    });

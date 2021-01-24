@@ -19,7 +19,6 @@ export class RoomTileComponent implements OnInit {
   @Input()
   set room(room: Room) {
     this._room = room;
-
     this.creator$ = from(room.creator.get()).pipe(
       map((x: any) => x.data())
     );

@@ -51,9 +51,11 @@ export class RoomService {
   addRoom(room: Room): Promise<DocumentReference> {
     return new Promise<any>((resolve, reject) => {
       this.auth.getUid().then( (userId :string) => {
-        room.creator = userId;
+        console.log(this.auth.currentUserRef.ref);
+        room.creator = this.auth.currentUserRef.ref;
         room.createdAt = new Date();
-        room = JSON.parse(JSON.stringify(room));
+        console.log(room);
+        //room = JSON.parse(JSON.stringify(room));
         return resolve(this.roomsCollection.add(room));
       });
     });

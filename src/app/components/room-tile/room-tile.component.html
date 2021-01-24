@@ -15,14 +15,12 @@
       </ion-avatar>
     </div>
     <div class="speaker-area">
-      <pre>{{creator$ | async | json}}</pre>
-      <pre>{{speakers$ | async | json}}</pre>
       <ul>
-        <!-- <li *ngFor="let speaker.get() of room.speakers | async">{{speaker.displayName}}</li> -->
+        <li *ngFor="let speaker of speakers$ | async">{{speaker.displayName}}</li>
       </ul>
       <div class="room-meta">
-        <span class="user-count">277</span> <ion-icon name="person"></ion-icon>
-        <span class="speaker-count">3</span> <ion-icon name="chatbubble-ellipses"></ion-icon>
+        <span class="user-count">{{ room.participants.length }}</span> <ion-icon name="person"></ion-icon>
+        <span class="speaker-count">{{ room.speaker.length }}</span> <ion-icon name="chatbubble-ellipses"></ion-icon>
       </div>
     </div>
   </ion-card-content>
