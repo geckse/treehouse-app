@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid class="full-page-grid">
+    <ion-row class="ion-align-items-stretch ion-justify-content-center">
+      <ion-col class="ion-align-items-center ion-justify-content-center">
+
+        <ion-card mode="ios">
+          <ion-card-header>
+            <ion-card-title>Login</ion-card-title>
+          </ion-card-header>
+
+          <ion-list lines="none" inset="true">
+
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="email" autocapitalize="none" required="true" floating="true"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="password" required="true" floating="true"></ion-input>
+            </ion-item>
+            <br/>
+            <ion-button (click)="performLogin()">
+              Login
+            </ion-button>
+
+          </ion-list>
+        </ion-card>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,1 +1,1 @@
-# treehouse-app
+# ionic-firebase-starter
