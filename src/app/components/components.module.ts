@@ -6,9 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { RoomTileComponent } from './room-tile/room-tile.component';
+import { HeaderComponent } from './header/header.component';
+import { UserBubbleComponent } from './user-bubble/user-bubble.component';
+import { UserBubbleListComponent } from './user-bubble-list/user-bubble-list.component';
 
 export const components = [
-  RoomTileComponent
+  RoomTileComponent,
+  HeaderComponent,
+  UserBubbleComponent,
+  UserBubbleListComponent
 ];
 
 export const pipes = [

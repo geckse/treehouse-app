@@ -17,7 +17,7 @@ export class AuthService {
 
   fireUser: any;
   currentUser: User;
-  public currentUserRef: DocumentReference;
+  currentUserRef: any;
 
   constructor(
       private http: HttpClient,

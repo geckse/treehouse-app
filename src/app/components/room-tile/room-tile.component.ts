@@ -3,6 +3,8 @@ import { forkJoin } from 'rxjs';
 import { from, merge, of, zip } from 'rxjs';
 import { combineAll, map, switchMap } from 'rxjs/operators';
 
+import { NavController } from '@ionic/angular';
+
 import { Room } from '../../models/Room';
 
 @Component({
@@ -26,12 +28,17 @@ export class RoomTileComponent implements OnInit {
     this.speakers$ = forkJoin(room.speaker.map(x => from(x.get()))).pipe(
       map(x => x.map((x:any) => x.data()))
     );
-
   }
   get room(): Room { return this._room; }
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {  }
 
   ngOnInit() { }
+
+  enterRoom() {
+    if(this._room && this._room.id){
+      this.navCtrl.navigateForward('/room/'+this._room.id);
+    }
+  }
 
 }

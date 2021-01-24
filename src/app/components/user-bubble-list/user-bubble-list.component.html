@@ -1,0 +1,4 @@
+<h2 *ngIf="title">{{title}}</h2>
+<div class="user-bubble-list ion-padding-top">
+  <user-bubble *ngFor="let user of userList$ | async" [user]="user"></user-bubble>
+</div>

@@ -19,6 +19,10 @@
         bottom: calc(var(--ion-default-footerbar-height) + var(--ion-safe-area-bottom));
       }
 
+      ion-avatar {
+        --border-radius: 44.5%;
+      }
+
       /*
         modals
       */

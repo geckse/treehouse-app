@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-header page="room"></app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <main class="ion-padding">
+
+    <h1>
+      {{roomSync?.title ? roomSync.title : ''}}
+    </h1>
+
+    <h2>Speaker</h2>
+    <div class="user-bubble-list ion-padding-top">
+      <user-bubble *ngFor="let user of speaker$ | async" [user]="user"></user-bubble>
+    </div>
+
+    <h2>Participants</h2>
+    <div class="user-bubble-list ion-padding-top">
+      <user-bubble *ngFor="let user of participants$ | async" [user]="user"></user-bubble>
+    </div>
+
+
+  </main>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+
+  <ion-toolbar *ngIf="this.roomService.hasJoinedRoom(roomSync)">
+    <ion-button shape="round" color="light" (click)="leaveRoom()">
+      <span slot="start">👋</span>
+      Leave quitly
+    </ion-button>
+
+    <ion-button class="ion-float-right" shape="round" color="light">
+      <span slot="start">🖐️</span>
+    </ion-button>
+    <ion-button  class="ion-float-right" shape="round" color="light">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="!this.roomService.hasJoinedRoom(roomSync)">
+    <ion-button shape="round" color="light" (click)="joinRoom()">
+      <span slot="start">👋</span>
+      Join discussion
+    </ion-button>
+  </ion-toolbar>
+
+</ion-footer>

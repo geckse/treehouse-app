@@ -1,6 +1,6 @@
-<ion-card *ngIf="room">
+<ion-card *ngIf="room" (click)="enterRoom()">
 
-<ion-card-header>
+<ion-card-header (click)="enterRoom()">
   <ion-card-title>
     {{room.title}}
   </ion-card-title>
@@ -19,7 +19,7 @@
         <li *ngFor="let speaker of speakers$ | async">{{speaker.displayName}}</li>
       </ul>
       <div class="room-meta">
-        <span class="user-count">{{ room.participants.length }}</span> <ion-icon name="person"></ion-icon>
+        <span class="user-count">{{ room?.participants ? room.participants.length : 0 }}</span> <ion-icon name="person"></ion-icon>
         <span class="speaker-count">{{ room.speaker.length }}</span> <ion-icon name="chatbubble-ellipses"></ion-icon>
       </div>
     </div>

@@ -1,0 +1,38 @@
+<ion-toolbar *ngIf="page == 'default'">
+  <ion-buttons slot="secondary">
+    <ion-button shape="round" fill="clear" color="dark">
+      <ion-icon slot="start" name="search"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-buttons class="ion-float-right" slot="primary">
+    <ion-button shape="round" fill="clear" color="dark">
+      <ion-icon slot="start" name="notifications-outline">
+      </ion-icon>
+    </ion-button>
+    <ion-button shape="round" fill="clear" color="dark">
+      <ion-avatar slot="icon-only">
+        <img src="https://thispersondoesnotexist.com/image"/>
+      </ion-avatar>
+    </ion-button>
+  </ion-buttons>
+
+</ion-toolbar>
+
+<ion-toolbar *ngIf="page == 'room'">
+  <ion-buttons slot="secondary">
+    <ion-button shape="round" fill="clear" color="dark" (click)="goHome()">
+      <ion-icon slot="start" name="chevron-down-outline"></ion-icon>
+      All rooms
+    </ion-button>
+  </ion-buttons>
+
+  <ion-buttons class="ion-float-right" slot="primary">
+    <ion-button shape="round" fill="clear" color="dark">
+      <ion-avatar slot="icon-only">
+        <img src="https://thispersondoesnotexist.com/image"/>
+      </ion-avatar>
+    </ion-button>
+  </ion-buttons>
+
+</ion-toolbar>
