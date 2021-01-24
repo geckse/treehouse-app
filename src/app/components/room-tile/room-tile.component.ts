@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
+import { from, merge, of, zip } from 'rxjs';
+import { combineAll, map, switchMap } from 'rxjs/operators';
 
 import { Room } from '../../models/Room';
 
@@ -20,11 +21,11 @@ export class RoomTileComponent implements OnInit {
     this._room = room;
 
     this.creator$ = from(room.creator.get()).pipe(
-      map((x:any) => x.data())
+      map((x: any) => x.data())
     );
 
-    this.speakers$ = from(room.speaker[0].get()).pipe(
-      map((x:any) => x.data())
+    this.speakers$ = forkJoin(room.speaker.map(x => from(x.get()))).pipe(
+      map(x => x.map((x:any) => x.data()))
     );
 
   }
@@ -32,6 +33,6 @@ export class RoomTileComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
